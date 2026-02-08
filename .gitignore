@@ -1,0 +1,20 @@
+# Large installation files
+Ubuntu.appx
+wsl_update_x64.msi
+get-docker.sh
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Environments
+.env
+.venv
+env/
+venv/
