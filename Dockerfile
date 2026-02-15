@@ -8,13 +8,13 @@ WORKDIR /app
 COPY ["*.py", "model_C=1.0.bin", "data-week-3.csv", "./"]
 
 
-RUN pip install flask pandas numpy scikit-learn requests waitress matplotlib
+RUN pip install flask flask-cors pandas numpy scikit-learn requests waitress matplotlib
 
 
 RUN python train.py
 
 
-EXPOSE 9696
+EXPOSE 80
 
 
-ENTRYPOINT ["waitress-serve", "--listen=0.0.0.0:9696", "predict:app"]
+ENTRYPOINT ["waitress-serve", "--listen=0.0.0.0:80", "predict:app"]

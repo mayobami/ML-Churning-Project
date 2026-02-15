@@ -3,6 +3,7 @@ from unittest import result
 import numpy as np
 
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 
 def predict_single(customer, dv, model):
     X = dv.transform([customer])  ## apply the one-hot encoding feature to the customer data 
@@ -15,6 +16,7 @@ with open('model_C=1.0.bin', 'rb') as f_in:
 
 
 app = Flask('churn')
+CORS(app)  ## Enable CORS for web browser access
 
 
 @app.route('/predict', methods=['POST'])  ## in order to send the customer information we need to post its data.
