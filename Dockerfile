@@ -8,7 +8,7 @@ WORKDIR /app
 COPY ["*.py", "model_C=1.0.bin", "data-week-3.csv", "./"]
 
 
-RUN pip install flask pandas numpy scikit-learn requests waitress matplotlib
+RUN pip install flask flask-cors pandas numpy scikit-learn requests waitress matplotlib
 
 
 RUN python train.py
